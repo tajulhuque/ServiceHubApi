@@ -1,0 +1,14 @@
+@model ServiceHubApi.Data_Access.RetentionPolicy
+
+
+@using(Html.BeginForm()) {
+    
+    @Html.LabelFor(m => m.Description)
+    @Html.TextBoxFor(m => m.Description, null, new { @class = "form-control" })
+
+    @Html.LabelFor(m => m.RetentionTimeHours)
+    @Html.TextBoxFor(m => m.RetentionTimeHours, null, new { @class = "form-control" })
+
+    <input type="submit" name="btnSubmit" id="SubmitButton" value="Submit" />
+
+}

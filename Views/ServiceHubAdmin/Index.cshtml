@@ -1,0 +1,42 @@
+﻿@model IEnumerable<ServiceHubApi.Data_Access.RetentionPolicy>
+
+@{
+    ViewData["Title"] = "Service Hub Admin";
+    //IEnumerable<ServiceHubApi.Data_Access.RetentionPolicy> retentionPolicies = @Model;
+}
+
+
+ <h3>Retention Policies</h3>
+
+
+<div>
+    <table class="table">
+        <th>Description</th>
+        <th>Retention Time</th>
+        <th>For Severity</th>
+    @foreach (var rp in @Model)
+    {
+        <tr>
+            <td>
+                @rp.Description
+            </td>
+            <td>
+                @rp.RetentionTimeHours hours
+            </td>
+            <td>
+                @rp.ForSeverity
+            </td>
+        </tr>
+    }
+    <tr>
+        <td colspan=3 style="text-align: left;">
+            @Html.ActionLink("Create New", "Create", "ServiceHubAdmin")
+        </td>
+    </tr>
+    </table>
+
+    
+   
+</div>
+
+
